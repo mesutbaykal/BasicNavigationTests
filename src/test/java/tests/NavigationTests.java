@@ -1,16 +1,17 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import utilities.BrowserFactory;
 import utilities.StringUtility;
 
 public class NavigationTests {
-
+    public static void main(String[] args) {
+        test1("chrome");
+        test2("firefox");
+        test3("edge");
+    }
     public static void test1(String browser){
+
         WebDriver driver=BrowserFactory.getDriver(browser);
         driver.get("https://google.com");
         driver.manage().window().maximize();
@@ -75,12 +76,5 @@ public class NavigationTests {
         BrowserFactory.closeDriver();
 
     }
-
-    public static void main(String[] args) {
-        test1("chrome");
-        test2("firefox");
-        test3("edge");
-    }
-
 
 }
